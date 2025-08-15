@@ -106,13 +106,14 @@ export const generatePDF = async (data: BioData): Promise<void> => {
   
   currentY = 60
 
-  // Contact Information with icon-style presentation
+  // Contact Information with professional presentation
   if (data.location) {
     doc.setFontSize(11)
-    doc.setFont('helvetica', 'normal')
+    doc.setFont('helvetica', 'bold')
     doc.setTextColor(secondaryColor.r, secondaryColor.g, secondaryColor.b)
-    doc.text('📍', margin, currentY)
-    currentY = addWrappedText(`${data.location}`, margin + 12, currentY, contentWidth - 12, 11, 'secondary')
+    doc.text('Country:', margin, currentY)
+    doc.setFont('helvetica', 'normal')
+    currentY = addWrappedText(`${data.location}`, margin + 35, currentY, contentWidth - 35, 11, 'secondary')
     currentY += 5
   }
 
