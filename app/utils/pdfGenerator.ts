@@ -253,7 +253,7 @@ export const generatePDF = async (data: BioData): Promise<void> => {
   })
 
   // Add professional footer to all pages
-  const pageCount = doc.internal.getNumberOfPages()
+  const pageCount = doc.getNumberOfPages()
   
   for (let i = 1; i <= pageCount; i++) {
     doc.setPage(i)
